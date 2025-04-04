@@ -18,11 +18,11 @@ jobs:
     steps:
     - run: date
 
- depends:
-   needs: [ubuntu, windows, macos]
-   runs-on: macos-latest
-   steps:
-   - run: date
+  depends:
+    needs: [ubuntu, windows, macos]
+    runs-on: macos-latest
+    steps:
+    - run: date
    
 
 
