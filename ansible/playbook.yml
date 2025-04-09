@@ -1,0 +1,19 @@
+- name:  Deploy Dockerized Application on EC2
+  hosts: web
+  become: true
+  tasks:
+    - name: Install Docker
+      apt:
+        name: docker.io
+        state: present
+        update_cache: yes
+    
+    - name: Run Flask Docker container
+      docker_container:
+        name: flask-app
+        image: weber-droid/flask-app:latest
+        state: started
+        restart_policy: 
+          name: always
+        ports:
+          - "80:5000" 
