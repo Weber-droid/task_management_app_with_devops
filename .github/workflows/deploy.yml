@@ -19,7 +19,7 @@ jobs:
                     
             - name: Build and push docker image
               run: | 
-                docker build -t weber-droid/flask-appp:latest .
+                docker build -t weber-droid/flask-appp:latest ./app
                 docker push weber-droid/flask-appp:latest 
 
             - name: Trigger Terraform & ansible deploy
